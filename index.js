@@ -20,9 +20,6 @@ $('h4.find')
 
 $('ul.find-us-footer').append('<li><em>Reddit</em></li>', '<li><em>Twitter</em></li>', '<li><em>Instagram</em></li>');
 
-// $('input.button').click(function() {
-//   alert('Handler for .click() called.');
-// });
 function signedIn() {
   if (event.target.id === 'send') {
     window.location.href = './html/workouts.html';
@@ -33,3 +30,28 @@ function signedIn() {
 }
 
 $('input.button').on('click', signedIn);
+
+//workouts.html
+$('h1.workout')
+  .text('Enter your max')
+  .val();
+
+$('strong.deads')
+  .text('Dead Lift')
+  .val();
+
+$('strong.squat')
+  .text('Squats')
+  .val();
+
+$('strong.bench')
+  .text('Bench')
+  .val();
+
+$('strong.bbrow')
+  .text('Barbell Row')
+  .val();
+
+$('strong.shoulder')
+  .text('Shoulder Press')
+  .val();

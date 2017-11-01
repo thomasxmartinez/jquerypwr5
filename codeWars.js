@@ -36,3 +36,22 @@ for (var key in animal) {
     console.log('I like to say ' + animal['tagline']);
   }
 }
+
+function golfScoreCalculator(parList, scoreList) {
+  var parArray = [];
+  var scoreArray = [];
+  var count = 0;
+  var totalsArray = [];
+  for (var i = 0; i < parList.length; i++) {
+    parArray.push(Number(parList[i]));
+  }
+  for (var i = 0; i < scoreList.length; i++) {
+    scoreArray.push(Number(scoreList[i]));
+  }
+  while (parArray.length && scoreArray.length) {
+    count += scoreArray.shift() - parArray.shift();
+  }
+  return count;
+}
+
+console.log(golfScoreCalculator('443454444344544443', '353445334534445344')); //, -1);

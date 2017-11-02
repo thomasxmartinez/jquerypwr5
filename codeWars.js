@@ -41,7 +41,6 @@ function golfScoreCalculator(parList, scoreList) {
   var parArray = [];
   var scoreArray = [];
   var count = 0;
-  var totalsArray = [];
   for (var i = 0; i < parList.length; i++) {
     parArray.push(Number(parList[i]));
   }
@@ -55,3 +54,19 @@ function golfScoreCalculator(parList, scoreList) {
 }
 
 console.log(golfScoreCalculator('443454444344544443', '353445334534445344')); //, -1);
+
+function divisibleByThree(str) {
+  var nums = [];
+  var count = 0;
+  for (var i = 0; i < str.length; i++) {
+    nums.push(parseInt(str[i]));
+  }
+  for (var j = 0; j < nums.length; j++) {
+    count += nums[j];
+  }
+  if (count % 3 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}

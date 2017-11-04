@@ -18,13 +18,10 @@ function repeats(arr) {
 
 var animal = {};
 animal.username = 'brickhouse';
-console.log(animal);
 
 animal['tagline'] = 'woof mufugga';
 
 var noises = [];
-
-console.log(animal);
 
 var count = 0;
 for (var key in animal) {
@@ -53,8 +50,6 @@ function golfScoreCalculator(parList, scoreList) {
   return count;
 }
 
-console.log(golfScoreCalculator('443454444344544443', '353445334534445344')); //, -1);
-
 function divisibleByThree(str) {
   var nums = [];
   var count = 0;
@@ -70,3 +65,98 @@ function divisibleByThree(str) {
     return false;
   }
 }
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function add(a, b) {
+  return a + b;
+}
+
+function manipulate(a, b, c, d) {
+  return add(a, b) + multiply(c, d);
+}
+
+var noiseArray = [];
+
+noiseArray.unshift('honk');
+noiseArray.push('bark');
+
+animal.noises = noiseArray;
+
+var animals = [];
+
+animals.push(animal);
+var quackers = {
+  username: 'DaffyDuck',
+  tagline: 'Yippeee!',
+  noises: ['quack', 'honk', 'sneeze', 'growl'],
+  friends: []
+};
+
+var phoebe = {
+  username: 'phoebe',
+  tagline: 'silence!',
+  noises: ['woof', 'arf', 'grr', 'growl'],
+  friends: []
+};
+
+animals.unshift(quackers);
+
+function animalTester(username) {
+  var obj = {
+    username: username
+  };
+  obj.otherArgs = [];
+  if (arguments.length > 1) {
+    for (var i = 1; i < arguments.length; i++) {
+      obj.otherArgs.push(arguments[i]);
+    }
+  }
+
+  return obj;
+}
+
+function AnimalCreator(username, species, tagline, noises, friends) {
+  var obj = {
+    username: username,
+    species: species,
+    tagline: tagline,
+    noises: noises,
+    friends: []
+  };
+  return obj;
+}
+var sheep = AnimalCreator('Cloud', 'sheep', 'You can count on me!', ['baahhh', 'arrgg', 'chewchewchew']);
+animals.push(sheep);
+
+function addFriend(username, friend) {
+  for (var i = 0; i < animals.length; i++) {
+    if (username === animals[i].username) {
+      animals[i].friends.push(friend.username);
+    }
+  }
+}
+
+addFriend('Cloud', phoebe);
+var myFarm = [sheep, phoebe, quackers];
+
+function addMatchesArray(array) {
+  for (var i = 0; i < array.length; i++) {
+    array[i].matches = [];
+  }
+}
+addMatchesArray(myFarm);
+
+function giveMatches(array, array2) {
+  for (var i = 0; i < array.length; i++) {
+    for (var j = 0; j < array2.length; j++) {
+      if (array[i].username !== array2[j].username && i !== j) {
+        array[i].matches.push(array2[j].username);
+      }
+    }
+  }
+}
+giveMatches(myFarm, animals);
+console.log(myFarm);

@@ -27,10 +27,10 @@ var count = 0;
 for (var key in animal) {
   count++;
   if (key === 'username') {
-    console.log('hi my name is ' + animal.username);
+    return 'hi my name is ' + animal.username;
   }
   if (key === 'tagline') {
-    console.log('I like to say ' + animal['tagline']);
+    return 'I like to say ' + animal['tagline'];
   }
 }
 
@@ -159,4 +159,16 @@ function giveMatches(array, array2) {
   }
 }
 giveMatches(myFarm, animals);
-console.log(myFarm);
+
+function arrangeCoins(n) {
+  var len = 0;
+  while (len < n) {
+    len++;
+    console.log(len);
+  }
+  return len;
+}
+console.log(arrangeCoins(5));
+//n = 5;
+//staircase must = 1 then 2 then 3
+//n--;

@@ -64,3 +64,22 @@ function insertDash(num) {
   return cont.join('');
 }
 console.log(insertDash(454793));
+
+function cubeOdd(arr) {
+  var cubed = [];
+  var sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (typeof arr[i] !== 'number') {
+      return undefined;
+    }
+    cubed.push(arr[i] * arr[i] * arr[i]);
+  }
+  for (var j = 0; j < cubed.length; j++) {
+    if (cubed[j] % 2 !== 0) {
+      sum += cubed[j];
+    }
+  }
+  console.log(cubed);
+  return sum;
+}
+console.log(cubeOdd([1, 2, 3, 4]));

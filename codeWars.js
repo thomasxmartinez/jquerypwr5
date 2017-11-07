@@ -160,15 +160,26 @@ function giveMatches(array, array2) {
 }
 giveMatches(myFarm, animals);
 
-function arrangeCoins(n) {
+var arrangeCoins = function(n) {
   var len = 0;
+  var staircase = 0;
   while (len < n) {
     len++;
-    console.log(len);
+    if (staircase < n && len !== n) {
+      staircase = len * 2;
+    }
   }
-  return len;
-}
-console.log(arrangeCoins(5));
+  return staircase / 2;
+};
 //n = 5;
 //staircase must = 1 then 2 then 3
 //n--;
+function check(a, x) {
+  for (var i = 0; i < a.length; i++) {
+    if(a[i] === x){
+    return true;
+  }else {
+    return false;
+  }
+}
+console.log(check([1, 2, 3], 2));

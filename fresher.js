@@ -136,10 +136,32 @@ function songDecoder(song) {
 
 function solution(str) {
   let newStr = [];
-  console.log(str.length);
   for (var i = str.length; i >= 0; i--) {
     newStr.push(str[i]);
   }
   return newStr.join('');
 }
-console.log(solution('arab'));
+
+function formatWords(words) {}
+
+formatWords(['one', 'two', 'three', 'four']);
+
+function gooseFilter(birds) {
+  let noFlockin = [];
+  let obj = {};
+  var geese = ['African', 'Roman Tufted', 'Toulouse', 'Pilgrim', 'Steinbacher'];
+  for (var i = 0; i < geese.length; i++) {
+    obj[geese[i]] = true;
+  }
+  console.log(obj);
+  for (var j = 1; j < birds.length; j++) {
+    for (var key in obj) {
+      if (key !== birds[j]) {
+        noFlockin.push(birds[j]);
+      }
+    }
+  }
+  return noFlockin;
+  // return an array containing all of the strings in the input array except those that match strings in geese
+}
+console.log(gooseFilter(['African', 'Barbary', 'Hook Bill', 'Blue Swedish', 'Crested']));

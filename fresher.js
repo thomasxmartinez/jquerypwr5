@@ -142,26 +142,26 @@ function solution(str) {
   return newStr.join('');
 }
 
-function formatWords(words) {}
-
-formatWords(['one', 'two', 'three', 'four']);
-
-function gooseFilter(birds) {
-  let noFlockin = [];
-  let obj = {};
-  var geese = ['African', 'Roman Tufted', 'Toulouse', 'Pilgrim', 'Steinbacher'];
-  for (var i = 0; i < geese.length; i++) {
-    obj[geese[i]] = true;
+function formatWords(words) {
+  let commas = [];
+  if (words.length === 0) {
+    return [];
   }
-  console.log(obj);
-  for (var j = 1; j < birds.length; j++) {
-    for (var key in obj) {
-      if (key !== birds[j]) {
-        noFlockin.push(birds[j]);
-      }
+  if (words.length === 1) {
+    return words[0];
+  }
+  for (var i = 0; i < words.length - 2; i++) {
+    if (words[i] == '') {
+      console.log(words[i], '**');
+      words.splice(i + 1, 1);
     }
   }
-  return noFlockin;
-  // return an array containing all of the strings in the input array except those that match strings in geese
+  return words;
 }
-console.log(gooseFilter(['African', 'Barbary', 'Hook Bill', 'Blue Swedish', 'Crested']));
+
+// console.log(formatWords(['one', 'two', 'three', 'four']));
+console.log(formatWords(['one', 'two', '', 'four']));
+// console.log(formatWords(['one', 'two']));
+console.log(formatWords(['', '', 'three']));
+// console.log(formatWords(['one']));
+// console.log(formatWords(['one', 'two', 'five', 'four']));

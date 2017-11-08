@@ -63,7 +63,6 @@ function insertDash(num) {
   }
   return cont.join('');
 }
-console.log(insertDash(454793));
 
 function cubeOdd(arr) {
   var cubed = [];
@@ -79,7 +78,68 @@ function cubeOdd(arr) {
       sum += cubed[j];
     }
   }
-  console.log(cubed);
   return sum;
 }
-console.log(cubeOdd([1, 2, 3, 4]));
+
+function findLongest(array) {
+  var longest = '';
+  console.log(longest.length);
+  for (var i = 0; i < array.length; i++) {
+    array[i] = array[i].toString();
+    if (array[i].length > longest.length) {
+      longest = array[i];
+    }
+  }
+  return Number(longest);
+}
+
+function order(s) {
+  var words = s.split(' ');
+  var orderedWords = [];
+
+  for (var num = 1; num < words.length + 1; num++) {
+    for (var i in words) {
+      if (words[i].search(num) >= 0) {
+        orderedWords.push(words[i]);
+      }
+    }
+  }
+
+  return orderedWords.join(' ');
+}
+
+function abbrevName(name) {
+  var named = [];
+  name = name.split(' ');
+  for (var i = 0; i < name.length; i++) {
+    named.push(name[i][0]);
+    if (named[i + 1] !== null) {
+      named.push('.');
+    }
+  }
+  named.splice(named.length - 1, named.length);
+  return named.join('');
+}
+
+function songDecoder(song) {
+  var wubs = [];
+  var dub = song.split('WUB');
+  console.log(dub);
+  for (var i = 0; i < dub.length; i++) {
+    if (dub[i] !== '' && dub[i] !== ' ') {
+      wubs.push(dub[i]);
+    }
+  }
+
+  return wubs.join(' ');
+}
+
+function solution(str) {
+  let newStr = [];
+  console.log(str.length);
+  for (var i = str.length; i >= 0; i--) {
+    newStr.push(str[i]);
+  }
+  return newStr.join('');
+}
+console.log(solution('arab'));
